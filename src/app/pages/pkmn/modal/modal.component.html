@@ -1,0 +1,31 @@
+<div class="modal fade" #modalElement tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="pokemonModalLabel">Detalles de {{pokemon.name | titlecase}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img [src]="pokemon.sprites!.front_default || '#'" [alt]="pokemon.name" class="img-fluid mb-3">
+                    <p><strong>ID:</strong>{{pokemon.id}}</p>
+                    <p><strong>ALTURA:</strong>{{pokemon.height}}</p>
+                    <p><strong>PESO:</strong>{{pokemon.weight}}</p>
+                    <p><strong>EXPERIENCIA:</strong>{{pokemon.base_experience}}</p>
+                </div>
+                <div class="col-md-6">
+                    <h6>Habilidades:</h6>
+                    <ul class="list-unstyled">
+                        <li *ngFor="let ability of pokemon.abilities"> {{ability.ability.name | titlecase}}<small *ngIf="ability.is_hidden">(Oculta)</small></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

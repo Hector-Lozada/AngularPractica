@@ -1,4 +1,7 @@
-<pokemon-pagination (eventNewPokemons)="setNewPokemon($event)"/>
+<div class="row">
+  <pokemon-search (eventSearch)="searchPokemon($event)"/>
+</div>
+<pokemon-pagination (eventNewPokemons)="setNewPokemon($event)" />
 <pkmn-card [pokemonsAll]="pokemons" />
 
-<pokemon-pagination (eventNewPokemons)="setNewPokemon($event)"/>
+<pokemon-pagination (eventNewPokemons)="setNewPokemon($event)" />
