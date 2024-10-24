@@ -1,1 +1,5 @@
-<p>dbz works!</p>
+<div class="row">
+    <dbz-search (eventSearch)="searchCharacter($event)"/>
+</div>
+<dbz-pagination (eventNewCharacters)="setNewCharacter($event)"/>
+<dbz-card  [charactersAll]="charactersAll"/>
